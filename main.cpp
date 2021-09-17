@@ -50,6 +50,4 @@ int main() {
         cin >> ok;
     }
     while (ok == 1);
-
-
 } 
