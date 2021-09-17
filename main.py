@@ -1,30 +1,21 @@
-# Matvei Barbashov, mb21162
-# A32. Create a programm to find the smallest common divisible 
-# of two given natural numbers.
-# Programm created: 16.09.2021
+'''
+Yulpatova Sofya, sy21002
+A24. Given two natural numbers m and n.
+Print sum of last n digits in number m. Splitting into digits should be carried out numerically.
+The date of creation is 16.09.2021
+'''
 
-print("Input the first number")
-n = input() #Value for the first number
-print("Input the second number")
-m = input() #Value for the second number
 
-n = int(n)
-m = int(m)
-    
-#Checking that numbers are nonzero, since zero is a not natural number
-if n > 0 and m > 0:
-    gcd = 1 #Value for the greatest common divisor
-    lcm = n*m #Value for the lowest common multiple 
+m = int(input("Enter the integer m: "))  # Value contains integer m - number
+n = int(input("Enter the variable n - the number of the last digits m for which you need to calculate the amount: "))  # Value contains integer n - count of digits, starting with the last, for sum numbers m
+sumn = 0  # Value contains integer - the amount of last n numbers of m
 
-    #Euclid's algorithm for finding GCD
-    while m != 0:
-        c = m
-        m = n%m
-        n = c
-    gcd = n
-        
-    lcm //= gcd #LCM of A and B numbers is A*B/GCD
-
-    print("Lowest common multiple is", lcm)
+if n <= 0 or m <= 0:  # checking the n is less than zero + WARNING because the count is a POSITIVE number
+    print("WARNING, numbers must be positive")
+elif len(str(m)) < n:  # checking that length of n is more than m + WARNING because the number n cant be more than the length of m
+    print("WARNING, the length of number m is less than n (number of digits)")
 else:
-    print("Error: Entered values aren't natural numbers")
+    for _ in range(n):  # the loop to count last n digits
+        sumn += m % 10  # the counting sum of last digit of number m in looping
+        m //= 10  # discarding the last digit of the number m
+    print("the amount of last n numbers of m is:", sumn)  # printing the result
