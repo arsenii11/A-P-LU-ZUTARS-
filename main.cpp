@@ -21,7 +21,7 @@ int main() {
         cin >> m;
         cout << "Enter the variable n - the number of the last digits m for which you need to calculate the amount: ";
         cin >> n;
-        int fake_m = m; // the value - fake of m to count the length os number m
+        int fake_m = m; // the value - fake of m to count the length of number m
         int counter_m = 0; // the value-counter for number m
         int sum = 0; // # Value contains integer - the amount of last n numbers of m
 
